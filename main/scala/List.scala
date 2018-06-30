@@ -28,6 +28,24 @@ object List {
     case Cons(x, xs) => x * product(xs)
   }
 
+  def tail(x: List[Int]): List[Int] = x match {
+    case Nil => Nil
+    case Cons(_, xs) => xs
+  }
+
+  def drop[A](l: List[A], n: Int): List[A] = {
+    if (n == 0) l
+    else l match {
+      case Nil => Nil
+      case Cons(_, ls) => drop(ls, n-1)
+    }
+  }
+
+  def dropWhile[A](l: List[A])(f: A => Boolean): List[A] = l match {
+    case Cons(x, xs) if f(x) => dropWhile(xs)(f)
+    case _ => l
+  }
+
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
@@ -48,6 +66,8 @@ object List {
      */
 
     println(x)
+
+    println(tail(1, List(2, 3, 4, 5)))
   }
 
 }
