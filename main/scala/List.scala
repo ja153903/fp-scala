@@ -46,6 +46,12 @@ object List {
     case _ => l
   }
 
+  def setHead[A](l: List[A], value: A): List[A] = l match {
+    case Nil => List(value)
+    case Cons(_, ls) => Cons(value, ls)
+  }
+}
+
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
@@ -67,7 +73,6 @@ object List {
 
     println(x)
 
-    println(tail(1, List(2, 3, 4, 5)))
-  }
+    println(tail(List(2, 3, 4, 5)))
 
 }
