@@ -55,7 +55,6 @@ object List {
 
   def lengthFoldLeft(l: List[Int]): Int = foldLeft(l, 0)((n, _) => 1 + n)
 
-
   def tail(x: List[Int]): List[Int] = x match {
     case Nil => Nil
     case Cons(_, xs) => xs
