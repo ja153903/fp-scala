@@ -23,6 +23,10 @@ object ListTest {
 
     println(addOne(ll))
 
+    println(ll.map(x => x + 2))
+
+    println(ll.max)
+
   }
 
 }
