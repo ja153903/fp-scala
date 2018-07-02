@@ -12,6 +12,8 @@ object ListTest {
     else l.head+1 :: addOne(l.tail)
   }
 
+  def betterAddOne(l: list[Int]): list[Int] = l.map(x => x + 1)
+
   def main(args: Array[String]): Unit = {
     val ll = list(1, 2, 3, 4)
 
@@ -26,6 +28,8 @@ object ListTest {
     println(ll.map(x => x + 2))
 
     println(ll.max)
+
+    println(betterAddOne(ll))
 
   }
 
