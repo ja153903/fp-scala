@@ -15,3 +15,10 @@ println(stateCapitals.get("New York"))
 
 // a work around to give a default value that is not None
 println(stateCapitals.getOrElse("New York", "No Capital"))
+
+/*
+To prevent Option from subclassing types other than Some and None
+Scala writes them as a sealed class as follows:
+
+sealed abstract class Option[+A] ... { ... }
+ */
